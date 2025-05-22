@@ -16,7 +16,7 @@ class PostController extends Controller
 
         //
         $categories = Category::get();
-        $posts = Post::orderBy('created_at', 'DESC')->get();
+        $posts = Post::orderBy('created_at', 'DESC')->paginate(5);
 
         //or
         // $posts = Post::latest()->get();
